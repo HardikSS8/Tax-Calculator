@@ -1,5 +1,7 @@
 package com.taxCalculator;
 
+import java.util.Random;
+
 public class Tax {
 
     // METHOD OVERLOADING NAMED AS CALCULATE WITH 2 or 3 ARGUMENTS WITH HELP OF POLYMORPHISM
@@ -52,5 +54,14 @@ public class Tax {
         double tax_value = calculate(price, gst_rate, cgst_rate);
         System.out.println("GST + CGST is: " + tax_value);
         System.out.println("Total Price: " + tab.price + " + " + tax_value + " = " + (tab.price+tax_value));
+    }
+
+    // Random any product that is not defined by subclass
+    public Tax(Product p) {
+        double price = p.price;
+        double gst_rate = p.gst_rate;
+        double tax_value = calculate(price, gst_rate);
+        System.out.println("GST is: " + tax_value);
+        System.out.println("Total price: " + p.price + " + " + tax_value + " = " + (p.price + tax_value));
     }
 }
