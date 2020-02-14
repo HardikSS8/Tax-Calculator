@@ -2,6 +2,7 @@
 
 package com.taxCalculator;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -20,7 +21,7 @@ public class Main {
             System.out.print("Product Name: ");
             String n = s.nextLine();
             System.out.print("Product ID: ");
-            int c = Integer.parseInt(s.nextLine());
+            String c = s.nextLine();
             System.out.print("Product Price: ");
             Double p = Double.parseDouble(s.nextLine());
             if(n.toLowerCase().equals("mobile")) {
@@ -70,7 +71,19 @@ public class Main {
                 Tax t1 = new Tax(tab1);
 //                Tax t1 = new Tax(p, d);
             } else {
-                System.out.println("This product is not available");
+                System.out.println("Your selected product is " + n + " of Rs. " + p);
+                Random r = new Random();
+                double gst_rate = 0;
+                if (p <= 50000) {
+                    gst_rate = Math.floor(r.nextInt(5)) + 5;
+                } else if (p > 50000 && p < 100000) {
+                    gst_rate = Math.floor(r.nextInt(2)) + 10;
+                } else {
+                    gst_rate = Math.floor(r.nextInt(3)) + 12;
+                }
+                System.out.println("GST rate is: " + gst_rate);
+                Product randomProduct = new Product(n, c, p, gst_rate);
+                Tax t1 = new Tax(randomProduct);
             }
             System.out.println("Want another tax calculation ? [1/0]");
             int q = s.nextInt();
