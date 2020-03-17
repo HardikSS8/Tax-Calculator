@@ -13,9 +13,8 @@ public class Main {
 //    public static Object Tablet;
 
     public static void main(String[] args) {
-
-        int i = 1;
-        while(i == 1) {
+        String repeat = "yes";
+        while(repeat.toLowerCase().equals("yes")) {
             System.out.println("Enter the details of Product:");
             Scanner s = new Scanner(System.in);
             System.out.print("Product Name: ");
@@ -24,7 +23,7 @@ public class Main {
             String c = s.nextLine();
             System.out.print("Product Price: ");
             Double p = Double.parseDouble(s.nextLine());
-            if(n.toLowerCase().equals("mobile")) {
+            if (n.toLowerCase().equals("mobile")) {
                 System.out.print("Product Brand: ");
                 String b = s.nextLine();
                 System.out.println("Your selected Product is Mobile of Company " + b + ".");
@@ -47,7 +46,7 @@ public class Main {
                 Tv tv1 = new Tv(c, n, p, gst, f, size);
                 Tax t1 = new Tax(tv1);
 //                Tax t1 = new Tax(p, d);
-            } else if(n.toLowerCase().equals("ref")) {
+            } else if (n.toLowerCase().equals("ref")) {
                 System.out.println("Volume Capacity[in L]: ");
                 int volume = s.nextInt();
                 System.out.println("Your selected product is Refrigerator of Capacity " + volume + " in liter.");
@@ -57,7 +56,7 @@ public class Main {
                 Ref r1 = new Ref(c, n, p, gst, volume);
                 Tax t1 = new Tax(r1);
 //                Tax t1 = new Tax(p, d);
-            } else if(n.toLowerCase().equals("tablet")) {
+            } else if (n.toLowerCase().equals("tablet")) {
                 System.out.print("Product Brand: ");
                 String b = s.nextLine();
                 System.out.println("Screen Size[in inch]: ");
@@ -71,25 +70,15 @@ public class Main {
                 Tax t1 = new Tax(tab1);
 //                Tax t1 = new Tax(p, d);
             } else {
-                System.out.println("Your selected product is " + n + " of Rs. " + p);
+                System.out.println("Your selected product is " + n + " of id " + c + " and price " + p);
                 Random r = new Random();
-                double gst_rate = 0;
-                if (p <= 50000) {
-                    gst_rate = Math.floor(r.nextInt(5)) + 5;
-                } else if (p > 50000 && p < 100000) {
-                    gst_rate = Math.floor(r.nextInt(2)) + 10;
-                } else {
-                    gst_rate = Math.floor(r.nextInt(3)) + 12;
-                }
-                System.out.println("GST rate is: " + gst_rate);
-                Product randomProduct = new Product(n, c, p, gst_rate);
-                Tax t1 = new Tax(randomProduct);
+                int gst = r.nextInt(6) + 12;
+                System.out.println("GST rate is: " + gst + "%.");
+                Product p1 = new Product(c, n, p, gst);
+                Tax t1 = new Tax(p1);
             }
-            System.out.println("Want another tax calculation ? [1/0]");
-            int q = s.nextInt();
-            if(q == 1) {
-                i = 1;
-            } else i = 0;
+            System.out.println("Want another tax calculation of product ? (yes / no)");
+            repeat = s.nextLine();
         }
     }
 }
