@@ -16,4 +16,5 @@ Here, overriding and overloading concept of programming is also applied to calcu
 #### Example-2) If product is not available then here we will calculate the random gst rate between 12 to 18%.
 <br />
 
-![Screenshot 2020-03-17 at 4 27 11 PM](https://user-images.githubusercontent.com/35401920/76849842-326d4500-686c-11ea-8ca6-793f35467c70.png)
+![Screenshot 2020-03-17 at 4 29 31 PM](https://user-images.githubusercontent.com/35401920/76850012-81b37580-686c-11ea-9075-3103d12dfe3e.png)
+
