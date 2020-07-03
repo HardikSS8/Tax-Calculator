@@ -2,9 +2,9 @@
 Tax-Calculator is a java application to calculate different taxes likes GST, CGST on any products like mobile, laptops etc.
 
 
-Object oriented concept is applicable here for defining class of product, tax and inheritance can be possible for subproducts. 
+Object oriented programming concept is applicable here for defining class of product, tax and inheritance can be possible for subproducts. 
 
-Here, overriding and overloading concept of programming is also applied to calculate different taxes using same function and for different products.
+Here, overriding and overloading concept of object oriented programming is also applied to calculate different taxes using same function and for different products.
 
 
 #### Example-1) If given product by user is available in our class names(inventory) then it will give output of predefined gst and cgst tax as shown below example.
